@@ -18,11 +18,11 @@ public class PersonalAccessTokenQuery
 
     public bool? Revoked { get; set; }
 
-    public string? Search { get; set; }
+    public string Search { get; set; }
 
-    public string? Sort { get; set; }
+    public string Sort { get; set; }
 
     public PersonalAccessTokenState? State { get; set; }
 
-    public string? UserId { get; set; }
+    public string UserId { get; set; }
 }
