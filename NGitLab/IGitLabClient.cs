@@ -79,6 +79,8 @@ public interface IGitLabClient
 
     ISearchClient AdvancedSearch { get; }
 
+    IPersonalAccessTokensClient PersonalAccessTokens { get; }
+
     IProjectIssueNoteClient GetProjectIssueNoteClient(ProjectId projectId);
 
     IEnvironmentClient GetEnvironmentClient(ProjectId projectId);

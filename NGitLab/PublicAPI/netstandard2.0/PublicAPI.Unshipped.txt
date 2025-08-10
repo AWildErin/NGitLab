@@ -100,6 +100,7 @@ NGitLab.GitLabClient.MergeRequests.get -> NGitLab.IMergeRequestClient
 NGitLab.GitLabClient.Namespaces.get -> NGitLab.INamespacesClient
 NGitLab.GitLabClient.Options.get -> NGitLab.RequestOptions
 NGitLab.GitLabClient.Options.set -> void
+NGitLab.GitLabClient.PersonalAccessTokens.get -> NGitLab.IPersonalAccessTokensClient
 NGitLab.GitLabClient.Projects.get -> NGitLab.IProjectClient
 NGitLab.GitLabClient.Runners.get -> NGitLab.IRunnerClient
 NGitLab.GitLabClient.Snippets.get -> NGitLab.ISnippetClient
@@ -223,6 +224,7 @@ NGitLab.IGitLabClient.Lint.get -> NGitLab.ILintClient
 NGitLab.IGitLabClient.Members.get -> NGitLab.IMembersClient
 NGitLab.IGitLabClient.MergeRequests.get -> NGitLab.IMergeRequestClient
 NGitLab.IGitLabClient.Namespaces.get -> NGitLab.INamespacesClient
+NGitLab.IGitLabClient.PersonalAccessTokens.get -> NGitLab.IPersonalAccessTokensClient
 NGitLab.IGitLabClient.Projects.get -> NGitLab.IProjectClient
 NGitLab.IGitLabClient.Runners.get -> NGitLab.IRunnerClient
 NGitLab.IGitLabClient.Snippets.get -> NGitLab.ISnippetClient
@@ -806,6 +808,20 @@ NGitLab.Impl.NamespacesClient.NamespacesClient(NGitLab.Impl.API api) -> void
 NGitLab.Impl.NamespacesClient.Search(string search) -> System.Collections.Generic.IEnumerable<NGitLab.Models.Namespace>
 NGitLab.Impl.NamespacesClient.this[long id].get -> NGitLab.Models.Namespace
 NGitLab.Impl.NamespacesClient.this[string fullPath].get -> NGitLab.Models.Namespace
+NGitLab.Impl.PersonalAccessTokensClient
+NGitLab.Impl.PersonalAccessTokensClient.Get() -> System.Collections.Generic.IEnumerable<NGitLab.Models.PersonalAccessToken>
+NGitLab.Impl.PersonalAccessTokensClient.Get(long id) -> NGitLab.Models.PersonalAccessToken
+NGitLab.Impl.PersonalAccessTokensClient.Get(NGitLab.Models.PersonalAccessTokenQuery query) -> System.Collections.Generic.IEnumerable<NGitLab.Models.PersonalAccessToken>
+NGitLab.Impl.PersonalAccessTokensClient.GetAsync() -> NGitLab.GitLabCollectionResponse<NGitLab.Models.PersonalAccessToken>
+NGitLab.Impl.PersonalAccessTokensClient.GetAsync(long id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
+NGitLab.Impl.PersonalAccessTokensClient.GetAsync(NGitLab.Models.PersonalAccessTokenQuery query) -> NGitLab.GitLabCollectionResponse<NGitLab.Models.PersonalAccessToken>
+NGitLab.Impl.PersonalAccessTokensClient.GetSelf() -> NGitLab.Models.PersonalAccessToken
+NGitLab.Impl.PersonalAccessTokensClient.GetSelfAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
+NGitLab.Impl.PersonalAccessTokensClient.PersonalAccessTokensClient(NGitLab.Impl.API api) -> void
+NGitLab.Impl.PersonalAccessTokensClient.Rotate(long id, System.DateTime? expiresAt = null) -> NGitLab.Models.PersonalAccessToken
+NGitLab.Impl.PersonalAccessTokensClient.RotateAsync(long id, System.DateTime? expiresAt = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
+NGitLab.Impl.PersonalAccessTokensClient.RotateSelf(System.DateTime? expiresAt = null) -> NGitLab.Models.PersonalAccessToken
+NGitLab.Impl.PersonalAccessTokensClient.RotateSelfAsync(System.DateTime? expiresAt = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
 NGitLab.Impl.PipelineClient
 NGitLab.Impl.PipelineClient.All.get -> System.Collections.Generic.IEnumerable<NGitLab.Models.PipelineBasic>
 NGitLab.Impl.PipelineClient.AllJobs.get -> System.Collections.Generic.IEnumerable<NGitLab.Models.Job>
@@ -1005,6 +1021,19 @@ NGitLab.INamespacesClient.Accessible.get -> System.Collections.Generic.IEnumerab
 NGitLab.INamespacesClient.Search(string search) -> System.Collections.Generic.IEnumerable<NGitLab.Models.Namespace>
 NGitLab.INamespacesClient.this[long id].get -> NGitLab.Models.Namespace
 NGitLab.INamespacesClient.this[string fullPath].get -> NGitLab.Models.Namespace
+NGitLab.IPersonalAccessTokensClient
+NGitLab.IPersonalAccessTokensClient.Get() -> System.Collections.Generic.IEnumerable<NGitLab.Models.PersonalAccessToken>
+NGitLab.IPersonalAccessTokensClient.Get(long id) -> NGitLab.Models.PersonalAccessToken
+NGitLab.IPersonalAccessTokensClient.Get(NGitLab.Models.PersonalAccessTokenQuery query) -> System.Collections.Generic.IEnumerable<NGitLab.Models.PersonalAccessToken>
+NGitLab.IPersonalAccessTokensClient.GetAsync() -> NGitLab.GitLabCollectionResponse<NGitLab.Models.PersonalAccessToken>
+NGitLab.IPersonalAccessTokensClient.GetAsync(long id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
+NGitLab.IPersonalAccessTokensClient.GetAsync(NGitLab.Models.PersonalAccessTokenQuery query) -> NGitLab.GitLabCollectionResponse<NGitLab.Models.PersonalAccessToken>
+NGitLab.IPersonalAccessTokensClient.GetSelf() -> NGitLab.Models.PersonalAccessToken
+NGitLab.IPersonalAccessTokensClient.GetSelfAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
+NGitLab.IPersonalAccessTokensClient.Rotate(long id, System.DateTime? expiresAt = null) -> NGitLab.Models.PersonalAccessToken
+NGitLab.IPersonalAccessTokensClient.RotateAsync(long id, System.DateTime? expiresAt = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
+NGitLab.IPersonalAccessTokensClient.RotateSelf(System.DateTime? expiresAt = null) -> NGitLab.Models.PersonalAccessToken
+NGitLab.IPersonalAccessTokensClient.RotateSelfAsync(System.DateTime? expiresAt = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<NGitLab.Models.PersonalAccessToken>
 NGitLab.IPipelineClient
 NGitLab.IPipelineClient.All.get -> System.Collections.Generic.IEnumerable<NGitLab.Models.PipelineBasic>
 NGitLab.IPipelineClient.AllJobs.get -> System.Collections.Generic.IEnumerable<NGitLab.Models.Job>
@@ -3303,6 +3332,57 @@ NGitLab.Models.Participant.Username.get -> string
 NGitLab.Models.Participant.Username.set -> void
 NGitLab.Models.Participant.WebUrl.get -> string
 NGitLab.Models.Participant.WebUrl.set -> void
+NGitLab.Models.PersonalAccessToken
+NGitLab.Models.PersonalAccessToken.Active.get -> bool
+NGitLab.Models.PersonalAccessToken.Active.set -> void
+NGitLab.Models.PersonalAccessToken.CreatedAt.get -> System.DateTime
+NGitLab.Models.PersonalAccessToken.CreatedAt.set -> void
+NGitLab.Models.PersonalAccessToken.Description.get -> string
+NGitLab.Models.PersonalAccessToken.Description.set -> void
+NGitLab.Models.PersonalAccessToken.ExpiresAt.get -> System.DateTime
+NGitLab.Models.PersonalAccessToken.ExpiresAt.set -> void
+NGitLab.Models.PersonalAccessToken.Id.get -> long
+NGitLab.Models.PersonalAccessToken.Id.set -> void
+NGitLab.Models.PersonalAccessToken.LastUsedAt.get -> System.DateTime
+NGitLab.Models.PersonalAccessToken.LastUsedAt.set -> void
+NGitLab.Models.PersonalAccessToken.Name.get -> string
+NGitLab.Models.PersonalAccessToken.Name.set -> void
+NGitLab.Models.PersonalAccessToken.PersonalAccessToken() -> void
+NGitLab.Models.PersonalAccessToken.Revoked.get -> bool
+NGitLab.Models.PersonalAccessToken.Revoked.set -> void
+NGitLab.Models.PersonalAccessToken.Scopes.get -> string[]
+NGitLab.Models.PersonalAccessToken.Scopes.set -> void
+NGitLab.Models.PersonalAccessToken.Token.get -> string
+NGitLab.Models.PersonalAccessToken.Token.set -> void
+NGitLab.Models.PersonalAccessToken.UserId.get -> long
+NGitLab.Models.PersonalAccessToken.UserId.set -> void
+NGitLab.Models.PersonalAccessTokenQuery
+NGitLab.Models.PersonalAccessTokenQuery.CreatedAfter.get -> System.DateTime?
+NGitLab.Models.PersonalAccessTokenQuery.CreatedAfter.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.CreatedBefore.get -> System.DateTime?
+NGitLab.Models.PersonalAccessTokenQuery.CreatedBefore.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.ExpiresAfter.get -> System.DateTime?
+NGitLab.Models.PersonalAccessTokenQuery.ExpiresAfter.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.ExpiresBefore.get -> System.DateTime?
+NGitLab.Models.PersonalAccessTokenQuery.ExpiresBefore.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.LastUsedAfter.get -> System.DateTime?
+NGitLab.Models.PersonalAccessTokenQuery.LastUsedAfter.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.LastUsedBefore.get -> System.DateTime?
+NGitLab.Models.PersonalAccessTokenQuery.LastUsedBefore.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.PersonalAccessTokenQuery() -> void
+NGitLab.Models.PersonalAccessTokenQuery.Revoked.get -> bool?
+NGitLab.Models.PersonalAccessTokenQuery.Revoked.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.Search.get -> string
+NGitLab.Models.PersonalAccessTokenQuery.Search.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.Sort.get -> string
+NGitLab.Models.PersonalAccessTokenQuery.Sort.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.State.get -> NGitLab.Models.PersonalAccessTokenState?
+NGitLab.Models.PersonalAccessTokenQuery.State.set -> void
+NGitLab.Models.PersonalAccessTokenQuery.UserId.get -> string
+NGitLab.Models.PersonalAccessTokenQuery.UserId.set -> void
+NGitLab.Models.PersonalAccessTokenState
+NGitLab.Models.PersonalAccessTokenState.active = 0 -> NGitLab.Models.PersonalAccessTokenState
+NGitLab.Models.PersonalAccessTokenState.inactive = 1 -> NGitLab.Models.PersonalAccessTokenState
 NGitLab.Models.PersonInfo
 NGitLab.Models.PersonInfo.Email.get -> string
 NGitLab.Models.PersonInfo.Email.set -> void

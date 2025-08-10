@@ -44,11 +44,14 @@ public class GitLabClient : IGitLabClient
 
     public ILintClient Lint { get; }
 
+    public IPersonalAccessTokensClient PersonalAccessTokens { get; }
+
     public RequestOptions Options
     {
         get => _api.RequestOptions;
         set => _api.RequestOptions = value;
     }
+
 
     /// <summary>
     /// Initialize a GitLab client without any authentication
@@ -137,6 +140,7 @@ public class GitLabClient : IGitLabClient
         AdvancedSearch = new SearchClient(_api, "/search");
         Jobs = new GlobalJobsClient(_api);
         Lint = new LintClient(_api);
+        PersonalAccessTokens = new PersonalAccessTokensClient(_api);
     }
 
     public IEventClient GetEvents()
