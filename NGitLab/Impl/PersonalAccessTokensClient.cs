@@ -96,7 +96,7 @@ public class PersonalAccessTokensClient : IPersonalAccessTokensClient
 
     public Task<PersonalAccessToken> RotateSelfAsync(DateTime? expiresAt = null, CancellationToken cancellationToken = default)
     {
-        string url = string.Format(PatRotateUrl, "id)self";
+        string url = string.Format(PatRotateUrl, "self");
         if (expiresAt != null)
         {
             url = Utils.AddParameter(url, "expires_at", expiresAt);
