@@ -52,7 +52,6 @@ public class GitLabClient : IGitLabClient
         set => _api.RequestOptions = value;
     }
 
-
     /// <summary>
     /// Initialize a GitLab client without any authentication
     /// </summary>

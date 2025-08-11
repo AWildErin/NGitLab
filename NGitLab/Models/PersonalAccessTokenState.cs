@@ -3,5 +3,5 @@
 public enum PersonalAccessTokenState
 {
     active,
-    inactive
+    inactive,
 }
